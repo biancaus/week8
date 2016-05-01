@@ -33,13 +33,22 @@
     <br>
     <h1>Grade:</h1>
     <script>
-        var mark = 85;
+        var mark = 50;
         
-        if (mark<50) {
-            document.write('FAIL');
+        if (mark>=80) {
+            document.write('A');
+        }
+        else if (mark>=70) {
+            document.write('B');
+        }
+        else if (mark>=60) {
+            document.write('C');
+        }
+        else if (mark>=50) {
+            document.write('D');
         }
         else {
-            document.write('PASS');
+            document.write('FAIL');
         }
         
     </script>
