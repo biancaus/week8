@@ -19,9 +19,21 @@
     <br>
     if username is Joe, alert "Hello, Joe":
     <script>
-        var username = 'Joe';
+        var username = 'John';
+        if (username == 'Joe') {
+            alert('Hello, ' + username);
+        }
+        else if (username == 'John') {
+            alert('Access denied for user ' + username);
+        }
+        else {
+            alert('Name not recognised');
+        }      
+    </script>
+    <br>
+    <h1>Grade:</h1>
+    <script>
         
-        alert('Hello, ' + username);
     </script>
 
 </body>
