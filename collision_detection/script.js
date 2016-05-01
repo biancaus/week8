@@ -12,7 +12,12 @@ Next, add the following features:
 
 var puck_x = 0;
 var puck_y = 0;
-var speed = 10;
+var speed = 30;
+
+    //function
+    function logCoordinates() {
+        console.log(puck_x + ', ' + puck_y)
+    }
 
     // move puck down event listener
     if (puck_y == 290){
@@ -25,24 +30,33 @@ var speed = 10;
     }
     else {
         document.getElementById('down').addEventListener('click', function() {
-        puck_y += 20;
+        puck_y += speed;
         document.getElementById('puck').style.top = puck_y + 'px';
+        logCoordinates();
       }
     );
               
     }
     // move puck up event listener
-    if (puck_y == 0) {
         document.getElementById('up').addEventListener('click', function() {
-        puck_y -= 10;
+        puck_y -= speed;
         document.getElementById('puck').style.top = puck_y + 'px';
+        logCoordinates();
       }
     );
-    }
 
-    // move puck down event listener
-      document.getElementById('down').addEventListener('click', function() {
-        puck_y += 10;
-        document.getElementById('puck').style.top = puck_y + 'px';
+    // move puck right event listener
+      document.getElementById('right').addEventListener('click', function() {
+        puck_x += speed;
+        document.getElementById('puck').style.left = puck_x + 'px';
+        logCoordinates();
+      }
+    );
+      
+    // move puck left event listener
+      document.getElementById('left').addEventListener('click', function() {
+        puck_x -= speed;
+        document.getElementById('puck').style.left = puck_x + 'px';
+        logCoordinates();
       }
     );
