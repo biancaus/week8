@@ -18,30 +18,33 @@ var speed = 30;
     function logCoordinates() {
         console.log(puck_x + ', ' + puck_y)
     }
+    
+    function checkCollision() {
+        if (puck_x >= 240 && puck_x <= 340 && puck_y >= 140 && puck_y <= 240) {
+            document.getElementById('gap').style.backgroundColor = ('red');
+            console.log('Collision detected');
+        }
+        else{
+            document.getElementById('gap').style.backgroundColor = ('white');
+
+        }
+    }
 
     // move puck down event listener
-    if (puck_y == 290){
-        document.getElementById('down').addEventListener('click', function() {
-        //puck_y += 10;
-        document.getElementById('puck').style.top = puck_y + 'px';
-      }
-    );
-      
-    }
-    else {
         document.getElementById('down').addEventListener('click', function() {
         puck_y += speed;
         document.getElementById('puck').style.top = puck_y + 'px';
         logCoordinates();
+        checkCollision();
       }
     );
               
-    }
     // move puck up event listener
         document.getElementById('up').addEventListener('click', function() {
         puck_y -= speed;
         document.getElementById('puck').style.top = puck_y + 'px';
         logCoordinates();
+        checkCollision();
       }
     );
 
@@ -50,6 +53,7 @@ var speed = 30;
         puck_x += speed;
         document.getElementById('puck').style.left = puck_x + 'px';
         logCoordinates();
+        checkCollision();
       }
     );
       
@@ -58,5 +62,6 @@ var speed = 30;
         puck_x -= speed;
         document.getElementById('puck').style.left = puck_x + 'px';
         logCoordinates();
+        checkCollision();
       }
     );
